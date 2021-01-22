@@ -4,6 +4,7 @@ $title = 'Демо-страничка';
 $message = '';
 $menu = getMenu();
 $lessons = getLessons();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'])) {
     $name = $_POST['name'];
     $message = "Привет,{$name}";
@@ -80,3 +81,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['name'])) {
 </div>
 </body>
 </html>
+
+
