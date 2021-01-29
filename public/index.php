@@ -1,75 +1,56 @@
 <?php
-//Цикл с предусловием
+include_once __DIR__ . "/../config/main.php";
+include ENGINE_DIR . "render.php";
+include ENGINE_DIR . "menu.php";
 /*
-$i = 10;
-
-while ($i < 10) {
-    echo ++$i . "<br>";
+$f = fopen("test.txt", "w+");
+foreach ($menu as $item) {
+    fputs($f, $item . "\n");
 }
+fclose($f);
+*/
+/*
+$menu = [];
+$f = fopen("test.txt", "a+");
+while($string = fgets($f)) {
+    $menu[] = $string;
+}
+fclose($f);
 */
 
-//Цикл с постусловием
 /*
-$i = 10;
-
-do {
-    echo ++$i . "<br>";
-} while($i < 10);
+echo file_get_contents("http://yandex.ru");
 */
-//Цикл со счетчиком
-
 /*
-for ($i = 0; $i < 10; $i++) {
-
-    echo "<br>--------<br>";
-    if ($i == 5) {
-        continue;
+$dir = opendir(ROOT_DIR);
+while($element = readdir($dir)) {
+    if(is_dir(ROOT_DIR . "/" . $element)) {
+        echo "<b>$element</b> <br>";
+    }else {
+        echo "$element <br>";
     }
-    echo $i;
 
-
-}*/
-/*
-$array = [5, 4, 7, 23, 90, 143, 'kjhfjkh', [1, 5], new stdClass()];
-
-$array[100] = 300;
-$array[] = 123;
-$array[] = 87897;
-
-
-var_dump($array);
-var_dump($ar*ray[2]);*/
-
-$article = [
-    'title' => 'Article',
-    'content' => 'kljsdksdjklsdjklsdjkl',
-    'date' => date('Y-m-d'),
-    'author' => [
-        'first_name' => 'Vasya',
-        'last_name' => 'Pupkin'
-    ],
-];
-
-foreach ($article as  &$value) {
-     $value .= "11111111111";
 }
-unset($value);
+closedir($dir);
 
-var_dump($article);
 
-$article2 = [
-    'title' => 'Article2',
-    'content' => '3433343434333434',
-    'date' => date('Y-m-d'),
-    'author' => [
-        'first_name' => 'Petya',
-        'last_name' => 'Vasechkin'
-    ]
-];
+$dir = scandir(ROOT_DIR);
+var_dump($dir);
+*/
 
-foreach ($article2 as $value) {
-    $value .= "564654654654654";
-}
+$menu = getMenu();
+drawMenu($menu);
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-var_dump($article2);
-var_dump($article);
+</body>
+</html>
