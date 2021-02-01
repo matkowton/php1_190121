@@ -11,3 +11,12 @@ function readCsv(string $source)
     return $data;
 }
 
+function getFiles(string $directory) {
+    return array_filter(
+        scandir($directory),
+        function ($item) use ($directory) {
+            return !is_dir($directory . "/" . $item);
+        }
+    );
+}
+
