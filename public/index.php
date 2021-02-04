@@ -4,11 +4,8 @@ include ENGINE_DIR . "render.php";
 include ENGINE_DIR . "menu.php";
 include ENGINE_DIR . "products.php";
 
-
-
 $products = getProducts();
 $menu = getMenu();
-
 ?>
 
 <!doctype html>
@@ -43,7 +40,6 @@ $menu = getMenu();
             </ul>
         </header>
         <main>
-
             <div class="row row-cols-1 row-cols-md-3">
                 <?php foreach ($products as $product): ?>
                     <div class="card mb-3" style="width: 18rem;">

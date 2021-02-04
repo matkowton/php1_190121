@@ -1,8 +1,13 @@
 <?php
 foreach ($images as $image) :
-    $imgUrl = "/img/photo.php?id={$image['id']}";
+    $imgUrl = "/photo.php?id={$image['id']}";
     ?>
-    <a href="<?=$imgUrl?>" target='_blank'>
-        <img src="<?=$imgUrl?>" width='200'>
+    <a href="<?=$imgUrl?>">
+        <img src="/img/<?=$image['path']?>" width='200'>
     </a>
 <? endforeach;?>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="gallery_image">
+    <input type="submit">
+</form>
