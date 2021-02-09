@@ -1,7 +1,7 @@
 <?php
-include ENGINE_DIR . "db.php";
+include_once ENGINE_DIR . "db.php";
 
 function getMenu(): array
 {
-   return queryAll( "SELECT * FROM menu WHERE access = 1");
+   return queryAll( "SELECT * FROM menu ORDER BY `order`");
 }

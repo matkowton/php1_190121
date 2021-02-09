@@ -27,3 +27,7 @@ function queryOne(string $sql) {
 function execute(string $sql) {
     return mysqli_query(getConnection(), $sql);
 }
+
+function getLastInsertId() {
+    return mysqli_insert_id(getConnection());
+}
