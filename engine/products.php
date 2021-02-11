@@ -1,9 +1,14 @@
 <?php
 require_once ENGINE_DIR . "db.php";
 
-function getProducts(): array
+function getProducts(array $ids = [])
 {
-    return queryAll("SELECT * FROM products");
+    $where = '';
+    if(!empty($ids)) {
+        $in = implode(', ', $ids);
+        $where = "WHERE id IN ($in)";
+    }
+    return queryAll("SELECT * FROM products {$where}");
 }
 
 function getProductById(int $id): array

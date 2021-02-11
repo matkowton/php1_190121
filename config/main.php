@@ -5,3 +5,7 @@ define("CONFIG_DIR", ROOT_DIR . "/config/");
 define("DB_DIR", ROOT_DIR . "/db/");
 define("PUBLIC_DIR", ROOT_DIR . "/public/");
 define("VIEWS_DIR", ROOT_DIR . "/views/");
+define("PAGES_DIR", ROOT_DIR . "/pages/");
+
+define('DEFAULT_CONTROLLER', 'product');
+define('DEFAULT_ACTION', 'index');

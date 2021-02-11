@@ -1,6 +1,6 @@
 <?php
 foreach ($images as $image) :
-    $imgUrl = "/photo.php?id={$image['id']}";
+    $imgUrl = "/gallery/photo?id={$image['id']}";
     ?>
     <a href="<?=$imgUrl?>">
         <img src="/img/<?=$image['path']?>" width='200'>

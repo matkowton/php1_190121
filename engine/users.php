@@ -13,3 +13,11 @@ function getUserById(int $id) {
         "SELECT * FROM users WHERE id = {$id}"
     );
 }
+
+function createUser(string $login, string $passwordHash): ?int {
+    $sql = "INSERT INTO users (login, password) VALUES ('{$login}','{$passwordHash}')";
+    if(execute($sql)) {
+        return getLastInsertId();
+    }
+    return null;
+}
