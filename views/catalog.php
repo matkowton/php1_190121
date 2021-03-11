@@ -6,7 +6,7 @@
                 <p class="card-text"><?= $product['description'] ?></p>
             </div>
             <div class="card-footer">
-                <a href="/product/card?id=<?=$product['id'];?>" class="btn btn-primary">Посмотреть</a>
+                <a href="/product/card?id=<?=$product['id'];?>" class="bbb">Посмотреть</a>
             </div>
         </div>
     <?php endforeach; ?>
